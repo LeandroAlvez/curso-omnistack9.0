@@ -9,13 +9,12 @@ import api from '../../services/api';
     
     const response =  await api.post('/sessions', { email });
 
-    const {_id} = response.data; 
+    const { _id } = response.data; 
 
     localStorage.setItem('user', _id);
 
     history.push('/spots');
 
-    console.log(response.data)
   } 
 
      return (

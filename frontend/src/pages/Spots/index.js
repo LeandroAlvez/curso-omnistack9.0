@@ -8,9 +8,7 @@ import api from '../../services/api';
             const response = await api.get('/spots', {
             headers: { user_id }
             });
-
-          console.log(response.data);  
-          
+            console.log(response)
           }
 
           carregarSpots();
