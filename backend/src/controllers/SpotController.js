@@ -9,18 +9,19 @@ const User = require('../models/User');
         const spots = await Spot.find({ techs: tech });
 
         return res.json(spots);
+        
     },
 
 
      async store(req, res) {
          const { filename } = req.file;
-         const { company, techs, price } = req.body
+         const { company, techs, price } = req.body;
          const { user_id } = req.headers;
 
          const user =  await User.findById(user_id);
 
          if(!user) {
-             return res.status(400).json({ error: 'User does not exists'})
+             return res.status(400).json({ error: 'User does not exists'});
          }
 
          const spot =  await Spot.create({
@@ -31,6 +32,6 @@ const User = require('../models/User');
             price
          })
 
-        return res.json({ spot })
+        return res.json(spot)
      }
  };
