@@ -24,7 +24,7 @@ body, input, button {
 }
 
 .container {
-  margin: 80px auto 0;
+  margin: 100px auto 0;
   max-width: 450px;
   width: 100%;
   display: flex;
@@ -54,12 +54,18 @@ body, input, button {
    font-weight: bold;
    margin-bottom: 8px;
   }
+  .content form label span {
+    font-weight: 300;
+    color: #999;
+    font-size: 12px;
+  }
 .content form input {
   margin-bottom: 20px;
   border: 1px solid #ddd;
+  border-radius: 5px;
   height: 45px;
   padding: 0 15px;
-  font-size: 15px;
+  font-size: 16px;
 }
  .content button.btn {
   border: 0;

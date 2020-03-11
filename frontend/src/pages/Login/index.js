@@ -2,20 +2,22 @@ import React, { useState }  from 'react';
 import api from '../../services/api';
 
  export default function Login({ history }) {
+
     const [email, setEmail] = useState(''); 
 
-  async function handleSubmit(event){
-    event.preventDefault();
-    
-    const response =  await api.post('/sessions', { email });
+    async function handleSubmit(event){
 
-    const { _id } = response.data; 
+        event.preventDefault();
+        
+        const response =  await api.post('/sessions', { email });
 
-    localStorage.setItem('user', _id);
+        const { _id } = response.data; 
 
-    history.push('/spots');
+        localStorage.setItem('user', _id);
 
-  } 
+        history.push('/dashboard');
+
+    } 
 
      return (
         <>
@@ -24,15 +26,15 @@ import api from '../../services/api';
             </p>
 
             <form onSubmit={handleSubmit}>
-            <label htmlFor="email">E-MAIL *</label>
-            <input 
-                type="email" 
-                id="email" 
-                placeholder="Seu melhor e-mail"
-                value={email}
-                onChange={event => setEmail(event.target.value)}
-            />
-            <button className="btn" type="submit">Entrar</button>
+                <label htmlFor="email">E-MAIL *</label>
+                <input 
+                      type="email" 
+                      id="email" 
+                      placeholder="Seu melhor e-mail"
+                      value={email}
+                      onChange={event => setEmail(event.target.value)}    
+                />
+                <button className="btn" type="submit">Entrar</button>
             </form>
         </> 
      )
