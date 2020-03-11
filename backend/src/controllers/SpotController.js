@@ -1,8 +1,8 @@
 const User = require('../models/User');
- const Spot = require('../models/Spot');
+const Spot = require('../models/Spot');
  
  
- module.exports = {
+module.exports = {
     async index(req, res) {
         const { tech } = req.query;
 

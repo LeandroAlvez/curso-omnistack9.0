@@ -1,15 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors')
+const cors = require('cors');
 
-const routes = require('./routes')
+const routes = require('./routes');
 
 const app = express();
 
 mongoose.connect('mongodb+srv://liusantos:E1212285@curso-omnistack-eeegy.mongodb.net/semana09?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-})
+});
 
 // GET, POST, PUT, DELETE
 
@@ -17,6 +17,7 @@ mongoose.connect('mongodb+srv://liusantos:E1212285@curso-omnistack-eeegy.mongodb
 //req.query = acessar query params (para filtros)
 //req.params = acessar route params (para edição ou delete)
 //req.body = acessar o corpo da requisição ( para criar ou editar)
+
 app.use(cors());
 app.use(express.json());
 app.use(routes);
